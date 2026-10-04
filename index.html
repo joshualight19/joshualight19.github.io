@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joshua Akerele | Portfolio</title>
+<style>
+:root{--bg:#050814;--card:rgba(20,28,52,.55);--text:#e8edf8;--muted:#9aa7c2;--line:rgba(255,255,255,.09);--c1:#00f2fe;--c2:#7c5cff;--gold:#fbbf24;--tag:rgba(0,242,254,.1);--nav:rgba(5,8,20,.75);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f6fb;--card:rgba(255,255,255,.85);--text:#0f172a;--muted:#55627a;--line:rgba(15,23,42,.1);--c1:#0a74da;--c2:#6d3df0;--gold:#b7791f;--tag:rgba(10,116,218,.1);--nav:rgba(244,246,251,.8)}}
+:root[data-theme="light"]{--bg:#f4f6fb;--card:rgba(255,255,255,.85);--text:#0f172a;--muted:#55627a;--line:rgba(15,23,42,.1);--c1:#0a74da;--c2:#6d3df0;--gold:#b7791f;--tag:rgba(10,116,218,.1);--nav:rgba(244,246,251,.8)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+a{color:var(--c1);text-decoration:none}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;animation:blob 14s ease-in-out infinite}
+.b1{width:34rem;height:34rem;background:var(--c1);top:-10%;left:-10%}
+.b2{width:30rem;height:30rem;background:var(--c2);top:25%;right:-12%;animation-delay:-4s}
+.b3{width:28rem;height:28rem;background:var(--gold);bottom:-15%;left:25%;opacity:.15;animation-delay:-8s}
+@keyframes blob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.12)}66%{transform:translate(-30px,30px) scale(.92)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 70%)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--nav);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .in{max-width:1000px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-weight:800;color:var(--text)}.logo b{color:var(--c1)}
+.links{display:flex;gap:20px;font-size:.88rem;overflow-x:auto}
+.links a{color:var(--muted);white-space:nowrap;transition:color .2s}.links a:hover{color:var(--c1)}
+.wrap{max-width:1000px;margin:auto;padding:0 22px}
+section{padding:80px 0 6px}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 8px;letter-spacing:-.02em}
+h2 i{font-style:normal;color:var(--c1);font-size:.9rem;margin-right:12px}
+.sub{color:var(--muted);margin:0 0 30px}
+.hero{padding:96px 0 20px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);font-size:.8rem;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1{font-size:clamp(3rem,11vw,6.5rem);line-height:1;margin:22px 0 18px;letter-spacing:-.04em;font-weight:900}
+.grad{background:linear-gradient(100deg,var(--c1),var(--c2) 55%,var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.role{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--muted);min-height:2em}
+.role b{color:var(--text)}.cur{display:inline-block;width:2px;height:1.1em;background:var(--c1);vertical-align:-.15em;margin-left:3px;animation:pulse 1s infinite}
+.lead{max-width:640px;margin:14px auto 0;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;justify-content:center}
+.btn{padding:12px 24px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:700;font-size:.95rem;transition:all .25s}
+.btn:hover{transform:translateY(-3px);border-color:var(--c1);box-shadow:0 0 24px color-mix(in srgb,var(--c1) 40%,transparent)}
+button.btn{font-family:inherit;cursor:pointer}
+.btn.p{background:linear-gradient(100deg,var(--c1),var(--c2));color:#fff;border:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:56px;text-align:left}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .35s}
+.card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--c1) 50%,transparent);box-shadow:0 10px 40px color-mix(in srgb,var(--c1) 18%,transparent)}
+.stat b{display:block;font-size:2rem;font-weight:900;background:linear-gradient(100deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat small{color:var(--muted)}
+.card h3{margin:0 0 4px;font-size:1.2rem}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+.card p{margin:8px 0 0;color:var(--muted)}
+.card ul{margin:10px 0 0;padding-left:20px;color:var(--muted)}.card li{margin-bottom:7px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{background:var(--tag);color:var(--c1);padding:4px 12px;border-radius:99px;font-size:.76rem;border:1px solid color-mix(in srgb,var(--c1) 25%,transparent)}
+.feature{border-left:4px solid var(--c1)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.nobel{position:relative;overflow:hidden;border-color:color-mix(in srgb,var(--gold) 45%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--gold) 14%,var(--card)),var(--card));margin-bottom:18px}
+.nobel::after{content:"";position:absolute;width:260px;height:260px;right:-80px;top:-80px;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 45%,transparent),transparent 70%)}
+.nobel h3{font-size:clamp(1.4rem,3.5vw,2rem);color:var(--gold);margin-bottom:10px;position:relative}
+.nobel p{color:var(--text);position:relative;max-width:760px}
+.path{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative}
+.path span{padding:6px 12px;border-radius:10px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);font-size:.8rem;color:var(--gold)}
+.contact{text-align:center;padding:48px 24px}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:50px 0 56px}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.blob,.grad,.dot,.cur{animation:none}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg"><div class="grid-bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+
+<nav><div class="in"><a class="logo mono" href="#top">&lt;<b>J.A.</b> /&gt;</a>
+<div class="links"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#honors">Honors</a><a href="#nobel">Nobel Dream</a><a href="#contact">Contact</a></div></div></nav>
+
+<main class="wrap" id="top">
+<header class="hero">
+<div class="pill mono"><span class="dot"></span>Regis University · Denver, CO</div>
+<h1><span class="grad">Joshua<br>Akerele</span></h1>
+<div class="role mono">I build <b id="typed"></b><span class="cur"></span></div>
+<p class="lead">Engineering Physics, Mathematics and Computer Science student turning physics into working hardware and software, from a NASA-supported balloon payload to AC circuit simulation and analysis.</p>
+<div class="btns"><a class="btn p" href="#projects">See my work</a><a class="btn" href="#nobel">My big goal</a><a class="btn" href="#contact">Contact me</a></div>
+<div class="stats">
+<div class="card stat"><b>4.00</b><small>Cumulative GPA</small></div>
+<div class="card stat"><b>NASA</b><small>Space Grant researcher</small></div>
+<div class="card stat"><b>3 in 1</b><small>Engineering Physics. Maths. Computer Science.</small></div>
+<div class="card stat"><b>2029</b><small>Expected graduation</small></div>
+</div>
+</header>
+
+<section id="research">
+<h2 class="rv"><i class="mono">01</i>Research Experience</h2><p class="sub rv">Hands-on hardware and software work at the edge of space.</p>
+<div class="card feature rv">
+<h3>High-Altitude Balloon Payload Researcher</h3>
+<div class="meta mono">NASA Space Grant Consortium / Regis University · Fall 2025 – Present</div>
+<ul>
+<li>Engineered a balloon payload with Teensy 4.1 and Arduino microcontrollers to capture and analyze acoustic impedance and sound-wave propagation in the upper atmosphere.</li>
+<li>Wrote C++ data-acquisition code to capture, structure and process real-time sensor data during flight.</li>
+<li>Soldered and wired environmental sensors for hardware that holds up under extreme conditions with continuous data logging.</li>
+<li>Project featured on the Regis University website for undergraduate research.</li>
+</ul>
+<div class="tags mono"><span class="tag">C++</span><span class="tag">Teensy 4.1</span><span class="tag">Arduino</span><span class="tag">Sensor Integration</span></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="rv"><i class="mono">02</i>Projects</h2><p class="sub rv">Software, simulation and analysis.</p>
+<div class="g">
+<div class="card rv"><h3>Biomedical Apnea Monitor</h3><div class="meta mono">2024</div><p>Monitoring software that detects heartbeat and respiratory metrics for apnea diagnosis. MATLAB algorithms filter biometric noise and isolate physiological signals for reliable real-time detection.</p><div class="tags mono"><span class="tag">MATLAB</span><span class="tag">C/C++</span><span class="tag">Python</span></div></div>
+<div class="card rv"><h3>AC Circuit Simulation</h3><div class="meta mono">2024</div><p>Simulink models of RLC circuits with integrated loads. Analyzed voltage, current, phase shift and impedance to validate designs against theory.</p><div class="tags mono"><span class="tag">MATLAB</span><span class="tag">Simulink</span></div></div>
+<div class="card rv"><h3>The Catenaccio Engine</h3><div class="meta mono">2025 – Present</div><p>Streamlit dashboard that simulates, ranks and evaluates defender stats for eFootball, mathematically modeling tactical mechanics from game data like hitboxes and limb dimensions.</p><div class="tags mono"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Data Modeling</span></div></div>
+<div class="card rv"><h3>Light Academy</h3><div class="meta mono">2026 – Present · In development</div><p>An interactive learning app that teaches concepts and solves basic math problems, built around clean UI and solid backend logic.</p><div class="tags mono"><span class="tag">Python</span><span class="tag">UI/UX</span><span class="tag">EdTech</span></div></div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="rv"><i class="mono">03</i>Technical Skills</h2><p class="sub rv">Tools I use to build and test.</p>
+<div class="g">
+<div class="card rv"><h3>Languages</h3><div class="tags mono"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div></div>
+<div class="card rv"><h3>Software</h3><div class="tags mono"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">Git</span><span class="tag">Flask</span><span class="tag">Streamlit</span><span class="tag">Database Design</span><span class="tag">Inventor</span><span class="tag">Fusion</span></div></div>
+<div class="card rv"><h3>Hardware</h3><div class="tags mono"><span class="tag">Precision Soldering</span><span class="tag">Oscilloscope</span><span class="tag">Function Generator</span><span class="tag">Circuit Wiring</span><span class="tag">Teensy 4.1</span><span class="tag">Arduino</span><span class="tag">Diagnostics</span></div></div>
+</div>
+</section>
+
+<section id="honors">
+<h2 class="rv"><i class="mono">04</i>Education & Honors</h2><p class="sub rv">B.S. Engineering Physics, Mathematics and Computer Science · Regis University · Expected May 2029 · 4.00 GPA</p>
+<div class="g">
+<div class="card rv"><h3>Emerging Scholar Award</h3><p>Regis University recognition for a 4.00 GPA and exceptional potential across several STEM disciplines.</p></div>
+<div class="card rv"><h3>Top 0.1% Nationwide</h3><p>Scored 339 out of 400 on UTME 2023, ranking in the top 0.1% of over 1.5 million candidates, with a perfect score in Mathematics.</p></div>
+<div class="card rv"><h3>APSO Math Competition Winner</h3><p>First place in a regional mathematics tournament, 2018.</p></div>
+<div class="card rv"><h3>HSE Levels 1, 2 & 3</h3><p>IASP & Deeprimex Consulting, Dec 2024. Job hazard analysis, lockout/tagout, confined spaces, emergency response.</p></div>
+</div>
+<p class="meta rv" style="margin-top:18px">Coursework: Programming, Data Structures, Multivariable Calculus, Linear Algebra, Electricity & Magnetism, AC Circuits, Hyperbolic Geometry.</p>
+</section>
+
+<section id="nobel">
+<h2 class="rv"><i class="mono">05</i>The Big Dream</h2><p class="sub rv">Where all of this is pointing.</p>
+<div class="card nobel rv">
+<h3>🏆 Nobel Prize in Physics</h3>
+<p>My long-term aspiration is to win the Nobel Prize in Physics, by making a discovery that changes how humanity understands the natural world. Every sensor I solder, every simulation I run and every proof I work through is practice toward that goal.</p>
+<div class="path mono"><span>Physics</span><span>Mathematics</span><span>Computation</span><span>Experimental hardware</span></div>
+</div>
+<div class="g">
+<div class="card rv"><h3>Millennium Prize</h3><p>Contribute a proof to one of the Millennium Prize Problems and add something lasting to mathematics.</p></div>
+<div class="card rv"><h3>Software Engineer & Physicist</h3><p>Build robust software while exploring the fundamental laws of the universe through theory, modeling and experiment.</p></div>
+<div class="card rv"><h3>Tools for a Better World</h3><p>Combine physics, math and computing to build technology that helps people and solves global challenges.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="card contact rv">
+<h2>Let's build something</h2>
+<p class="sub" style="margin-bottom:22px">Open to research, internship and engineering opportunities.</p>
+<p class="mono" style="margin:0 0 18px;font-size:1.05rem"><span id="addr" style="user-select:all">joshuaakerele8@gmail.com</span></p>
+<div class="btns" style="margin-top:0">
+<button class="btn p" id="copy" type="button">Copy my email</button>
+<a class="btn" href="https://www.linkedin.com/in/joshua-akerele-4888b42ab" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/joshualight19" target="_blank" rel="noopener">GitHub</a>
+</div></div>
+</section>
+</main>
+<footer class="mono">© 2026 Joshua Akerele · Denver, CO</footer>
+
+<script>
+document.documentElement.classList.add('js');
+try{
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+}catch(e){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on')})}
+setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on')})},2500);
+var words=['space hardware.','signal-processing software.','physics simulations.','tools for a better world.'],w=0,c=0,d=false,t=document.getElementById('typed');
+function tick(){var s=words[w];c+=d?-1:1;t.textContent=s.slice(0,c);var dl=d?35:75;
+if(!d&&c===s.length){d=true;dl=1500}else if(d&&c===0){d=false;w=(w+1)%words.length;dl=300}
+setTimeout(tick,dl)}
+tick();
+document.getElementById('copy').addEventListener('click',function(){var b=this,a=document.getElementById('addr'),m='joshuaakerele8@gmail.com';
+function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy my email'},2000)}
+function sel(){try{var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl/Cmd+C';}catch(e){}}
+try{navigator.clipboard.writeText(m).then(ok,sel)}catch(e){sel()}});
+</script>
+</body>
+</html>
